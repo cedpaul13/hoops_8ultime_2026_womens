@@ -1,0 +1,19 @@
+name: hoops_8ultime
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch
+  - torchvision
+  - torchaudio
+  - opencv
+  - pandas
+  - xgboost
+  - scikit-learn
+  - ipykernel
+  - pip
+  - pip:
+      - ultralytics  # For YOLOv8/v9
+      - sam2         # Meta AI Segment Anything 2
+      - yt-dlp       # Scraper

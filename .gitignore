@@ -1,0 +1,9 @@
+venv/
+.env
+.DS_Store
+*.mp4
+*.mov
+data/raw_film/
+data/processed_masks/
+__pycache__/
+.ipynb_checkpoints/
