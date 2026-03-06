@@ -1,0 +1,22 @@
+=================================================================
+BACKTEST : ÈRE MODERNE (2019-2025)
+=================================================================
+QF 2025: UNB vs CAR:
+  Réel: 74-71 | Proj: 63-76 | Erreur: 16 pts
+
+QF 2025: SAS vs UBC:
+  Réel: 75-55 | Proj: 75-58 | Erreur: 3 pts
+
+QF 2024: SAS vs CAL:
+  Réel: 85-54 | Proj: 76-60 | Erreur: 15 pts
+
+QF 2024: LAV vs ALB:
+  Réel: 65-57 | Proj: 67-58 | Erreur: 3 pts
+
+QF 2022: TMU vs UPEI:
+  Réel: 80-49 | Proj: 75-53 | Erreur: 9 pts
+
+QF 2019: LAV vs OTT:
+  Réel: 73-62 | Proj: 66-61 | Erreur: 8 pts
+
+Marge d'erreur moyenne (Ère Moderne): 9.0 points

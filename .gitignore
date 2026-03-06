@@ -1,9 +1,17 @@
+# Environnements et système
 venv/
 .env
 .DS_Store
+.vscode/
+
+# Cache Python
+__pycache__/
+.ipynb_checkpoints/
+
+# Fichiers Media et résidus (Vision/SAM2)
 *.mp4
 *.mov
 data/raw_film/
 data/processed_masks/
-__pycache__/
-.ipynb_checkpoints/
+sam2_s.pt
+check_setup.py
