@@ -19,7 +19,7 @@ Projet de prédiction analytique pour le Championnat féminin U Sports 2026 au P
 | **18h00** | **Saskatchewan (5) vs Laval (8)** | **63 - 55** | 79.83% (SAS) | -395 | SAS -8.0 |
 
 ---
-
+ 
 ## 🏆 PROBABILITÉS DE MÉDAILLES (POST-QF)
 *Simulation Monte Carlo (N=10,000)*
 
