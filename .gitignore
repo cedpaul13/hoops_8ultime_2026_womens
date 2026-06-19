@@ -15,3 +15,6 @@ data/raw_film/
 data/processed_masks/
 sam2_s.pt
 check_setup.py
+
+# data
+*.csv

@@ -56,6 +56,9 @@ Le modèle heuristique surnommé **Temporal Predictor** a validé l'importance d
 ### Focus UNB vs Carleton : L'effet Katie Butts
 La dominance de la joueuse de l'UNB #21, **Katie Butts**, a été le facteur X de cette première journée. Avec **33 pts et 15 rebonds** (9/14 au tir), elle a pulvérisé ses moyennes de saison (19 pts, 12 reb). Cette pression constante sur l'anneau a provoqué une crise de fautes chez Carleton, menant à l'exclusion de deux joueuses clés. Le modèle a été recalibré avec un **Elite Player Factor** pour refléter ce type d'impact individuel en phase éliminatoire.
 
+### Post-Mortem Final
+- [Bilan final, scores officiels et leçons apprises](outputs/post_mortem/2026_womens_final8_post_mortem.md)
+
 
 
 ---
