@@ -18,3 +18,7 @@ check_setup.py
 
 # data
 *.csv
+
+# Site (built locally, deployed via gh-pages, never committed to main)
+docs/
+*.html
