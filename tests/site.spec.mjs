@@ -20,6 +20,15 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
+test('header logo loads with the tournament name in both languages', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('.usports-logo')).toBeVisible();
+  expect(await page.locator('.usports-logo').evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
+  await expect(page.locator('.topbar-event .en')).toBeVisible();
+  await page.locator('#langToggle').click();
+  await expect(page.locator('.topbar-event .fr')).toBeVisible();
+});
+
 test('mobile menu supports keyboard entry, exit and short viewports', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 256 });
   await page.goto('/');

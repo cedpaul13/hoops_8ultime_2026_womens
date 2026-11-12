@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>8U.26 · The model vs. the game</title>
-<meta name="description" id="metaDesc" content="The 2026 Women's Final 8: a correct champion pick, an underestimated finalist and an overcorrected forecast.">
+<meta name="description" id="metaDesc" content="The model picked Saskatchewan to win the 2026 U SPORTS Women's Final 8 but gave UNB just a 10.63% chance of beating Carleton.">
 <script>
 (function () {
   var root = document.documentElement;
@@ -143,10 +143,12 @@
   }
   .topbar a { text-decoration: none; color: var(--ink-2); }
   .topbar a:hover { color: var(--ink); }
-  .wordmark { display: flex; align-items: center; gap: 0.7rem; font-size: 1.2rem; font-weight: 800; color: var(--ink) !important; letter-spacing: -0.06em; }
-  .wordmark::before { content: ""; width: 23px; height: 23px; border: 1px solid var(--s1); border-radius: 6px; background: linear-gradient(135deg, var(--s1) 0 48%, transparent 49%); box-shadow: 0 0 22px var(--glow); }
+  .brand-lockup { display: flex; align-items: center; gap: 0.65rem; flex: none; }
+  .usports-brand { display: flex; align-items: center; flex: none; }
+  .usports-logo { display: block; width: auto; height: 3rem; padding: 0.2rem; background: #fff; border-radius: 4px; }
+  .topbar-event { max-width: 13rem; color: var(--muted); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; line-height: 1.35; text-transform: uppercase; }
   .topbar .spacer { flex: 1; }
-  .navlinks { display: flex; align-items: center; gap: 1.5rem; }
+  .navlinks { display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
   .navlinks a[aria-current="location"] { color: var(--s1); }
   #themeToggle, #langToggle, #menuToggle {
     background: none; border: 1px solid var(--hairline); border-radius: 999px;
@@ -173,13 +175,14 @@
     [data-enhanced] #menuToggle { display: block; order: 3; width: 2.75rem; height: 2.75rem; }
     #langToggle { order: 1; }
     #themeToggle { order: 2; }
+    .topbar-event { max-width: 7rem; font-size: 0.58rem; letter-spacing: 0.04em; }
     .navlinks { flex-basis: 100%; flex-wrap: wrap; gap: 0.3rem; }
     html:not([data-enhanced]) .topbar { position: static; }
     [data-enhanced] .navlinks {
       display: none; position: absolute; top: 100%; left: 0; right: 0;
       flex-direction: column; align-items: stretch; gap: 0;
       flex-wrap: nowrap;
-      max-height: calc(100vh - 4rem); max-height: calc(100dvh - 4rem); overflow-y: auto;
+      max-height: calc(100vh - 4.1rem); max-height: calc(100dvh - 4.1rem); overflow-y: auto;
       background: var(--page); border-bottom: 1px solid var(--hairline);
       box-shadow: 0 12px 20px -12px rgba(0,0,0,0.25);
     }
@@ -206,6 +209,7 @@
     font-weight: 750;
     letter-spacing: -0.065em;
     max-width: 15ch;
+    overflow-wrap: anywhere;
     margin-bottom: 1.6rem;
   }
   .deck {
@@ -603,7 +607,12 @@
 <a class="skip-link" href="#main"><span class="en">Skip to analysis</span><span class="fr">Aller à l&rsquo;analyse</span></a>
 <nav class="topbar" aria-label="Primary navigation" data-label-en="Primary navigation" data-label-fr="Navigation principale">
   <div class="topbar-in">
-    <a class="wordmark" href="#top" aria-label="8U.26 · 8 Ultime 2026">8U.26</a>
+    <div class="brand-lockup">
+      <a class="usports-brand" href="#top" aria-label="U SPORTS">
+        <img class="usports-logo" src="usports-logo.svg" alt="" width="144" height="172">
+      </a>
+      <span class="topbar-event"><span class="en">Women&rsquo;s Final 8 / Québec 2026</span><span class="fr">8 Ultime féminin / Québec 2026</span></span>
+    </div>
     <span class="spacer"></span>
     <div class="navlinks" id="navLinks">
       <a href="#whiteboard"><span class="en">Model</span><span class="fr">Modèle</span></a>
@@ -622,9 +631,8 @@
   <div class="wide">
     <div class="hero-grid">
     <div class="hero-copy">
-    <p class="kicker"><span class="en">U SPORTS Women&rsquo;s Final 8 / Québec 2026</span><span class="fr">8 Ultime féminin U SPORTS / Québec 2026</span></p>
-    <h1><span class="en">What the model<br>got right<br><em>and wrong.</em></span><span class="fr">Ce que le modèle<br>a vu juste<br><em>et ce qu&rsquo;il a raté.</em></span></h1>
-    <p class="deck"><span class="en">UNB went 26&ndash;3 before nationals. The model still expected a first-round exit.</span><span class="fr">L&rsquo;UNB affichait un bilan de 26&ndash;3. Le modèle prévoyait pourtant son élimination en quarts.</span></p>
+    <h1><span class="en">The model picked Saskatchewan.<br><em>It underestimated UNB.</em></span><span class="fr">Le modèle a choisi la Saskatchewan.<br><em>Il a sous-estimé l&rsquo;UNB.</em></span></h1>
+    <p class="deck"><span class="en">UNB went 26&ndash;3. The model gave it just a 10.63% chance of beating Carleton.</span><span class="fr">L&rsquo;UNB affichait 26&ndash;3. Le modèle ne lui donnait que 10,63&nbsp;% de chances de battre Carleton.</span></p>
     <div class="hero-actions">
       <a class="button primary" href="#reckoning"><span class="en">Explore the results</span><span class="fr">Explorer les résultats</span><span aria-hidden="true">↗</span></a>
       <a class="button" href="https://github.com/cedpaul13/hoops_8ultime_2026_womens"><span class="en">View the code</span><span class="fr">Voir le code</span><span aria-hidden="true">↗</span></a>
@@ -642,7 +650,7 @@
     <aside class="signal-panel" aria-label="Saskatchewan">
       <div class="signal-top"><span><span class="en">Model / Gold forecast</span><span class="fr">Modèle / Prévision or</span></span><span class="status-dot"><span class="en">Final</span><span class="fr">Terminé</span></span></div>
       <div class="probability"><strong><span class="en">75.7%</span><span class="fr">75,7 %</span></strong><small><span class="en">pre-tournament gold odds</span><span class="fr">chances d&rsquo;or avant le tournoi</span></small></div>
-      <div class="signal-team">Saskatchewan Huskies<small><span class="en">Model favourite → National champion</span><span class="fr">Favorite du modèle → Championne nationale</span></small></div>
+      <div class="signal-team">Saskatchewan Huskies<small><span class="en">Model favourite → National champion</span><span class="fr">Favorite du modèle, puis championne nationale</span></small></div>
       <div class="scoreline"><span>Saskatchewan</span><strong>77 <span style="color:var(--muted)">–</span> 68</strong><span>UNB</span></div>
       <div class="signal-footer"><span><span class="en">Gold medal game · March 8</span><span class="fr">Finale · 8 mars</span></span><span>PEPS / Québec</span></div>
     </aside>
@@ -660,14 +668,14 @@
 <section id="whiteboard" tabindex="-1">
   <div class="prose">
     <p class="part"><span class="en">01 / Method</span><span class="fr">01 / Méthode</span></p>
-    <h2><span class="en">Recent games count more.</span><span class="fr">Les derniers matchs pèsent plus lourd.</span></h2>
-    <p class="en">The ratings factor in offence, defence and strength of schedule across four conferences, with adjustments for home court, rest and pressure.</p>
-    <p class="fr">Les évaluations tiennent compte de l&rsquo;attaque, de la défense et de la force du calendrier dans les quatre conférences, puis ajustent pour l&rsquo;avantage du terrain, le repos et la pression.</p>
+    <h2><span class="en">Recent games count more.</span><span class="fr">Les matchs récents comptent davantage.</span></h2>
+    <p class="en">Across four conferences, the model weighs offence, defence and schedule strength, then adjusts for home court, rest and pressure.</p>
+    <p class="fr">Dans quatre conférences, le modèle évalue l&rsquo;attaque, la défense et la force du calendrier, puis tient compte du terrain, du repos et de la pression.</p>
   </div>
 
   <div class="wide">
     <figure>
-      <div class="ftitle"><span class="en">How a team&rsquo;s rating is built</span><span class="fr">Comment la cote d&rsquo;une équipe est construite</span></div>
+      <div class="ftitle"><span class="en">How the model rates a team</span><span class="fr">Comment le modèle évalue une équipe</span></div>
       <div class="fsub"><span class="en">K-Last Games weighting, per <code>config.py</code></span><span class="fr">Pondération K-Last Games, selon <code>config.py</code></span></div>
       <div class="wbar viz" aria-hidden="true">
         <div style="--seg:var(--s1); --w:75%"></div>
@@ -681,8 +689,8 @@
   </div>
 
   <div class="prose">
-    <p class="en">The backtest spans only six games across four editions &mdash; too small a sample to establish reliable win probabilities.</p>
-    <p class="fr">Six matchs répartis sur quatre éditions, c&rsquo;est trop peu pour savoir si les probabilités de victoire sont fiables.</p>
+    <p class="en">Six games from four tournaments aren&rsquo;t enough to test whether the win probabilities are calibrated.</p>
+    <p class="fr">Six matchs répartis sur quatre éditions, c&rsquo;est trop peu pour savoir si les probabilités de victoire sont bien calibrées.</p>
   </div>
 
   <div class="wide">
@@ -705,7 +713,7 @@
         </tbody>
       </table>
     </div>
-    <p class="subhead"><span class="en">The eight teams, by the numbers</span><span class="fr">Les huit équipes, en chiffres</span></p>
+    <p class="subhead"><span class="en">Team stats at a glance</span><span class="fr">Les huit équipes en chiffres</span></p>
     <div class="tablewrap" tabindex="0" role="region" aria-label="Team data" data-label-en="Team data" data-label-fr="Données des équipes">
       <table>
         <thead>
@@ -732,14 +740,14 @@
 <section id="picks" tabindex="-1">
   <div class="prose">
     <p class="part"><span class="en">02 / Forecast</span><span class="fr">02 / Prévisions</span></p>
-    <h2><span class="en">The Picks</span><span class="fr">Les pronostics</span></h2>
-    <p class="en">The model preferred fifth-seeded Saskatchewan over top-seeded TMU.</p>
-    <p class="fr">Le modèle préférait la Saskatchewan, cinquième tête de série, à TMU, première au classement national.</p>
+    <h2><span class="en">The pre-tournament picks</span><span class="fr">Les pronostics avant le tournoi</span></h2>
+    <p class="en">The model picked fifth-seeded Saskatchewan over top seed TMU.</p>
+    <p class="fr">Le modèle préférait la Saskatchewan, cinquième tête de série, à TMU, tête de série no 1.</p>
   </div>
 
   <div class="wide">
     <figure>
-      <div class="ftitle"><span class="en">Pre-tournament medal odds</span><span class="fr">Cotes de médailles avant le tournoi</span></div>
+      <div class="ftitle"><span class="en">Pre-tournament medal odds</span><span class="fr">Probabilités de médaille avant le tournoi</span></div>
       <div class="fsub"><span class="en">Monte Carlo simulation, N = 10,000</span><span class="fr">Simulation Monte-Carlo, N = 10 000</span></div>
       <div class="hbar-group sans"><span class="en">Gold medal probability</span><span class="fr">Probabilité de médaille d&rsquo;or</span></div>
       <div class="hbar-row"><div class="hbar-label sans">Saskatchewan (5)</div><div class="hbar-track viz" style="--w:75.7%"><div class="hbar-fill" style="--barc:var(--s3)"></div></div><div class="hbar-val sans">75.7%</div></div>
@@ -750,13 +758,13 @@
       <div class="hbar-row"><div class="hbar-label sans">Carleton (7)</div><div class="hbar-track viz" style="--w:0.1%"><div class="hbar-fill" style="--barc:var(--miss)"></div></div><div class="hbar-val sans">0.1%</div></div>
       <div class="hbar-row"><div class="hbar-label sans">McGill (6)</div><div class="hbar-track viz" style="--w:0%"><div class="hbar-fill" style="--barc:var(--miss)"></div></div><div class="hbar-val sans"><span class="en">0.0%</span><span class="fr">0,0&nbsp;%</span></div></div>
       <div class="hbar-row"><div class="hbar-label sans"><b>UNB (2)</b></div><div class="hbar-track viz" style="--w:0%"><div class="hbar-fill" style="--barc:var(--miss)"></div></div><div class="hbar-val sans"><span class="en">0 / 10,000</span><span class="fr">0 / 10 000</span></div></div>
-      <figcaption><span class="en">Zero titles in a finite simulation does not mean a true zero chance.</span><span class="fr">Aucun titre simulé ne signifie pas une probabilité réellement nulle.</span></figcaption>
+      <figcaption><span class="en">Zero titles in 10,000 simulations doesn&rsquo;t mean a team had no chance.</span><span class="fr">Aucun titre en 10&nbsp;000 simulations ne veut pas dire qu&rsquo;une équipe n&rsquo;avait aucune chance.</span></figcaption>
     </figure>
   </div>
 
   <div class="prose">
-    <p class="subhead"><span class="en">Thursday&rsquo;s quarterfinal lines</span><span class="fr">Les lignes des quarts de finale de jeudi</span></p>
-    <p class="subdeck sans"><span class="en">Published before tip-off · March 5</span><span class="fr">Publiés avant l&rsquo;entre-deux · 5 mars</span></p>
+    <p class="subhead"><span class="en">Thursday&rsquo;s quarterfinal picks</span><span class="fr">Les pronostics des quarts de jeudi</span></p>
+    <p class="subdeck sans"><span class="en">Published before tip-off · March 5</span><span class="fr">Publiés avant les matchs · 5 mars</span></p>
   </div>
 
   <div class="wide">
@@ -791,8 +799,8 @@
 
 <section id="committee">
   <div class="prose">
-    <p class="part"><span class="en">03 / Committee vs. model</span><span class="fr">03 / Comité et modèle</span></p>
-    <h2><span class="en">The committee&rsquo;s picks</span><span class="fr">Les choix du comité</span></h2>
+    <p class="part"><span class="en">03 / Committee vs. model</span><span class="fr">03 / Le comité face au modèle</span></p>
+    <h2><span class="en">UNB: committee seed, model forecast</span><span class="fr">UNB&nbsp;: classement du comité, prévision du modèle</span></h2>
   </div>
 
   <div class="wide">
@@ -801,14 +809,14 @@
     <div class="disclosure-content">
     <div class="pedgrid">
       <div class="pedcol">
-        <div class="ptitle"><span class="en">The committee&rsquo;s pick: UNB</span><span class="fr">Le choix du comité&nbsp;: UNB</span></div>
+        <div class="ptitle"><span class="en">Committee ranking &mdash; UNB</span><span class="fr">Classement du comité &mdash; UNB</span></div>
         <div class="pedrow"><span class="t"><span class="en">National seed</span><span class="fr">Tête de série nationale</span></span><span class="r"><span class="en">No. 2 overall</span><span class="fr">2<sup>e</sup> au pays</span></span></div>
         <div class="pedrow"><span class="t"><span class="en">Regular season</span><span class="fr">Saison régulière</span></span><span class="r">26&ndash;3, 18&ndash;2 SUA</span></div>
       </div>
       <div class="pedcol">
-        <div class="ptitle"><span class="en">The model&rsquo;s forecast: UNB</span><span class="fr">La prévision du modèle&nbsp;: UNB</span></div>
-        <div class="pedrow"><span class="t"><span class="en">Pre-tournament gold odds</span><span class="fr">Cote pour l&rsquo;or avant le tournoi</span></span><span class="r"><span class="en">0 / 10,000</span><span class="fr">0 / 10 000</span></span></div>
-        <div class="pedrow"><span class="t"><span class="en">QF win probability</span><span class="fr">Probabilité de victoire au quart</span></span><span class="r"><span class="en">10.63%</span><span class="fr">10,63&nbsp;%</span></span></div>
+        <div class="ptitle"><span class="en">Model forecast &mdash; UNB</span><span class="fr">Prévision du modèle &mdash; UNB</span></div>
+        <div class="pedrow"><span class="t"><span class="en">Pre-tournament title simulations</span><span class="fr">Titres simulés avant le tournoi</span></span><span class="r"><span class="en">0 / 10,000</span><span class="fr">0 / 10 000</span></span></div>
+        <div class="pedrow"><span class="t"><span class="en">Quarterfinal win probability</span><span class="fr">Chances de gagner le quart</span></span><span class="r"><span class="en">10.63%</span><span class="fr">10,63&nbsp;%</span></span></div>
       </div>
     </div>
     </div>
@@ -819,34 +827,34 @@
 <section id="qfday">
   <div class="prose">
     <p class="part"><span class="en">04 / Quarterfinals</span><span class="fr">04 / Quarts de finale</span></p>
-    <h2><span class="en">Quarterfinals: what happened.</span><span class="fr">Les quarts de finale, match par match.</span></h2>
+    <h2><span class="en">How the quarterfinals played out</span><span class="fr">Les quarts, match par match</span></h2>
   </div>
 
   <div class="wide">
     <div class="cards">
       <div class="game upset">
-        <div class="round"><span><span class="en">12:30 PM</span><span class="fr">12 h 30</span></span><span class="badge miss"><span class="en">Model missed it</span><span class="fr">Le modèle s&rsquo;est trompé</span></span></div>
+        <div class="round"><span><span class="en">12:30 PM</span><span class="fr">12 h 30</span></span><span class="badge miss"><span class="en">Wrong pick</span><span class="fr">Mauvais pronostic</span></span></div>
         <div class="teamline win"><span class="seed">2</span><span class="team">UNB</span><span class="pts">81</span></div>
         <div class="teamline lose"><span class="seed">7</span><span class="team">Carleton</span><span class="pts">63</span></div>
-        <div class="story"><span class="en">UNB reached its first national semifinal since 2006. The model had favoured Carleton.</span><span class="fr">L&rsquo;UNB a atteint sa première demi-finale nationale depuis 2006. Le modèle, lui, favorisait Carleton.</span></div>
+        <div class="story"><span class="en">UNB reached its first national semifinal since 2006. The model favoured Carleton.</span><span class="fr">L&rsquo;UNB a atteint sa première demi-finale nationale depuis 2006; le modèle favorisait Carleton.</span></div>
       </div>
       <div class="game called">
-        <div class="round"><span><span class="en">2:30 PM</span><span class="fr">14 h 30</span></span><span class="badge hit"><span class="en">Correct pick</span><span class="fr">Bon pronostic</span></span></div>
+        <div class="round"><span><span class="en">2:30 PM</span><span class="fr">14 h 30</span></span><span class="badge hit"><span class="en">Right pick</span><span class="fr">Bon pronostic</span></span></div>
         <div class="teamline win"><span class="seed">3</span><span class="team">Calgary</span><span class="pts">58</span></div>
         <div class="teamline lose"><span class="seed">6</span><span class="team">McGill</span><span class="pts">45</span></div>
         <div class="story"><span class="en">Projected margin: +12. Actual: +13.</span><span class="fr">Écart projeté&nbsp;: +12. Réel&nbsp;: +13.</span></div>
       </div>
       <div class="game called">
-        <div class="round"><span><span class="en">6:00 PM</span><span class="fr">18 h 00</span></span><span class="badge hit"><span class="en">Correct pick</span><span class="fr">Bon pronostic</span></span></div>
+        <div class="round"><span><span class="en">6:00 PM</span><span class="fr">18 h 00</span></span><span class="badge hit"><span class="en">Right pick</span><span class="fr">Bon pronostic</span></span></div>
         <div class="teamline win"><span class="seed">5</span><span class="team">Saskatchewan</span><span class="pts">71</span></div>
         <div class="teamline lose"><span class="seed">4</span><span class="team">UBC</span><span class="pts">55</span></div>
-        <div class="story"><span class="en">Projected: 71&ndash;56. One point off the final score.</span><span class="fr">Projection&nbsp;: 71–56. À un point du score final.</span></div>
+        <div class="story"><span class="en">Projected: 71&ndash;56. The final score was 71&ndash;55.</span><span class="fr">Projection&nbsp;: 71–56. Score final&nbsp;: 71–55.</span></div>
       </div>
       <div class="game upset">
-        <div class="round"><span><span class="en">8:00 PM</span><span class="fr">20 h 00</span></span><span class="badge hit"><span class="en">The model saw a close game</span><span class="fr">Le modèle prévoyait un match serré</span></span></div>
+        <div class="round"><span><span class="en">8:00 PM</span><span class="fr">20 h 00</span></span><span class="badge hit"><span class="en">Close call</span><span class="fr">Match serré prévu</span></span></div>
         <div class="teamline win"><span class="seed">8</span><span class="team">Laval</span><span class="pts">57</span></div>
         <div class="teamline lose"><span class="seed">1</span><span class="team">TMU</span><span class="pts">54</span></div>
-        <div class="story"><span class="en">The first No. 1 seed to lose a Final 8 quarterfinal since 2006.</span><span class="fr">Depuis 2006, aucune tête de série no 1 n&rsquo;avait perdu en quarts du 8 Ultime.</span></div>
+        <div class="story"><span class="en">First No. 1 seed to lose a Final 8 quarterfinal since 2006.</span><span class="fr">Première tête de série no 1 éliminée en quarts depuis 2006.</span></div>
       </div>
     </div>
 
@@ -860,9 +868,9 @@
 <section id="reckoning" tabindex="-1">
   <div class="prose">
     <p class="part"><span class="en">05 / Results</span><span class="fr">05 / Résultats</span></p>
-    <h2><span class="en">Saskatchewan won. My adjustment didn&rsquo;t help.</span><span class="fr">Saskatchewan a gagné; mon ajustement, lui, n&rsquo;a pas aidé.</span></h2>
-    <p class="en">I manually added an &ldquo;Elite Player Factor&rdquo; after the quarterfinals. This revised forecast must be evaluated separately from the original.</p>
-    <p class="fr">Après les quarts, j&rsquo;ai ajouté manuellement un « facteur joueuse d&rsquo;élite ». Il faut évaluer ces nouvelles prévisions séparément des originales.</p>
+    <h2><span class="en">I changed the forecast after the quarterfinals. I shouldn&rsquo;t have.</span><span class="fr">J&rsquo;ai modifié les prévisions après les quarts. Je n&rsquo;aurais pas dû.</span></h2>
+    <p class="en">After the quarterfinals, I added an &ldquo;Elite Player Factor&rdquo; by hand. I&rsquo;ll evaluate this forecast separately.</p>
+    <p class="fr">Après les quarts, j&rsquo;ai ajouté à la main un « facteur joueuse d&rsquo;élite ». J&rsquo;évaluerai cette prévision séparément.</p>
   </div>
 
   <div class="wide">
@@ -875,7 +883,7 @@
       <div class="hbar-group sans"><span class="en">Post-quarterfinal</span><span class="fr">Après les quarts</span></div>
       <div class="hbar-row"><div class="hbar-label sans">UNB</div><div class="hbar-track viz" style="--w:43.5%"><div class="hbar-fill"></div></div><div class="hbar-val sans">43.5%</div></div>
       <div class="hbar-row"><div class="hbar-label sans">Saskatchewan</div><div class="hbar-track viz" style="--w:30.9%"><div class="hbar-fill" style="--barc:var(--s3)"></div></div><div class="hbar-val sans">30.9%</div></div>
-      <figcaption><span class="en">The field also shrank from eight teams to four; this is not a controlled comparison of model versions.</span><span class="fr">Le plateau est aussi passé de huit équipes à quatre; ce n&rsquo;est pas une comparaison contrôlée des versions du modèle.</span></figcaption>
+      <figcaption><span class="en">The field shrank from eight teams to four, so this isn&rsquo;t a controlled comparison.</span><span class="fr">Le plateau est passé de huit équipes à quatre; la comparaison n&rsquo;est donc pas contrôlée.</span></figcaption>
     </figure>
   </div>
 
@@ -924,7 +932,7 @@
 <section id="eyetest" tabindex="-1">
   <div class="prose">
     <p class="part"><span class="en">06 / Player impact</span><span class="fr">06 / Impact individuel</span></p>
-    <h2><span class="en">Players who made a difference.</span><span class="fr">Les joueuses qui ont fait la différence.</span></h2>
+    <h2><span class="en">Four standout performances</span><span class="fr">Quatre joueuses à retenir</span></h2>
   </div>
 
   <div class="wide">
@@ -992,9 +1000,9 @@
 <section id="homefloor">
   <div class="prose">
     <p class="part"><span class="en">07 / Home court</span><span class="fr">07 / À domicile</span></p>
-    <h2><span class="en">Home-court advantage in the model.</span><span class="fr">L&rsquo;avantage du terrain dans le modèle.</span></h2>
+    <h2><span class="en">Home court, built into the model</span><span class="fr">L&rsquo;avantage du terrain dans le modèle</span></h2>
     <p class="en">I gave home court a fixed defensive adjustment: <code>HCA_DEFENSIVE_LOCK = 6.5</code>.</p>
-    <p class="fr">J&rsquo;ai appliqué un ajustement défensif fixe à l&rsquo;avantage du terrain&nbsp;: <code>HCA_DEFENSIVE_LOCK = 6.5</code>.</p>
+    <p class="fr">J&rsquo;ai appliqué un ajustement défensif fixe à l&rsquo;équipe locale&nbsp;: <code>HCA_DEFENSIVE_LOCK = 6.5</code>.</p>
   </div>
   <div class="wide">
     <details class="disclosure">
@@ -1016,7 +1024,7 @@
     </div>
 
     <p class="data-note"><span class="en">Québec hosted for a record fifth time.</span><span class="fr">Québec accueillait le tournoi pour une cinquième fois, un record.</span></p>
-    <p class="subhead"><span class="en">How Québec covered its team</span><span class="fr">Comment Québec a couvert son équipe</span></p>
+    <p class="subhead"><span class="en">Local coverage of Laval</span><span class="fr">Laval dans les médias locaux</span></p>
 
     <div class="mediagrid">
       <a class="post" href="https://ici.radio-canada.ca/nouvelle/2235306/rouge-or-basketball-feminin-championnat-khelifi-tmu" target="_blank" rel="noopener">
@@ -1030,14 +1038,14 @@
       <a class="post" href="https://www.lesoleil.com/sports/2026/03/06/dans-les-coulisses-dun-tournoi-national-a-laval-X62LQXKAJBAR7LOYJGPKE77HDM/" target="_blank" rel="noopener">
         <div class="src">Le Soleil · <span class="en">March 6, 2026</span><span class="fr">6 mars 2026</span></div>
         <div class="quote" lang="fr">«&nbsp;Dans les coulisses d&rsquo;un tournoi national à Laval&nbsp;»</div>
-        <div class="note"><span class="en">The organizers&rsquo; shorthand for the job: <i>&laquo;&nbsp;On éteint les feux.&nbsp;&raquo;</i></span><span class="fr">Le travail des organisateurs, résumé en coulisses&nbsp;: <i>&laquo;&nbsp;On éteint les feux.&nbsp;&raquo;</i></span></div>
+        <div class="note"><span class="en">The organizers&rsquo; shorthand for the job: <i>&laquo;&nbsp;On éteint les feux.&nbsp;&raquo;</i></span><span class="fr">Comme le résument les organisateurs&nbsp;: <i>&laquo;&nbsp;On éteint les feux.&nbsp;&raquo;</i></span></div>
       </a>
     </div>
   </div>
 
   <div class="prose">
     <p class="en">Five fifth-year players finished their Laval careers on home court.</p>
-    <p class="fr">Cinq joueuses de cinquième année terminaient leur parcours à Laval devant leur public.</p>
+    <p class="fr">Cinq joueuses de cinquième année ont terminé leur carrière universitaire à Laval, devant leur public.</p>
   </div>
     </div>
     </details>
@@ -1046,35 +1054,35 @@
 
 <section id="lessons">
   <div class="prose">
-    <p class="part"><span class="en">08 / What I&rsquo;d change</span><span class="fr">08 / Ce que je changerais</span></p>
-    <h2><span class="en">For the 2027 tournament.</span><span class="fr">Pour le tournoi de 2027.</span></h2>
+    <p class="part"><span class="en">08 / Looking ahead</span><span class="fr">08 / Pour la suite</span></p>
+    <h2><span class="en">What I&rsquo;ll change for 2027</span><span class="fr">Ce que je changerai pour 2027</span></h2>
     <div class="lesson-grid">
     <div class="lesson">
-      <p class="num"><span class="en">First</span><span class="fr">D&rsquo;abord</span></p>
-      <h3><span class="en">Watch more games</span><span class="fr">Regarder plus de matchs</span></h3>
-      <p class="en">Watch 5&ndash;8 games for each contender. Track foul drawing and rotation changes&mdash;details team averages miss.</p>
-      <p class="fr">Pour chaque prétendante, regarder 5 à 8 matchs et noter les fautes provoquées et les changements de rotation, que les moyennes d&rsquo;équipe ne montrent pas.</p>
+      <p class="num"><span class="en">1</span><span class="fr">1</span></p>
+      <h3><span class="en">Scout each contender</span><span class="fr">Mieux connaître les équipes</span></h3>
+      <p class="en">I&rsquo;ll watch 5&ndash;8 games per contender, tracking fouls drawn and rotation changes.</p>
+      <p class="fr">Je regarderai de 5 à 8 matchs par équipe pour noter les fautes provoquées et les changements de rotation.</p>
     </div>
 
     <div class="lesson">
-      <p class="num"><span class="en">Then</span><span class="fr">Ensuite</span></p>
-      <h3><span class="en">Account for tournament pace</span><span class="fr">Tenir compte du rythme en tournoi</span></h3>
-      <p class="en">The final had 145 combined points; the bronze game had 125. Both totals beat projections. Test pace and late-game fouling separately.</p>
-      <p class="fr">La finale a totalisé 145 points et le match pour le bronze, 125. Les deux totaux dépassaient les projections. Tester séparément le rythme et les fautes de fin de match.</p>
+      <p class="num"><span class="en">2</span><span class="fr">2</span></p>
+      <h3><span class="en">Revisit medal-game scoring</span><span class="fr">Revoir les scores des matchs de médaille</span></h3>
+      <p class="en">Both medal games scored above projections: 145 in the final, 125 in the bronze game. I&rsquo;ll test pace and late fouling separately.</p>
+      <p class="fr">Les deux matchs de médaille ont dépassé les projections de points&nbsp;: 145 en finale, 125 au match pour le bronze. J&rsquo;examinerai séparément le rythme et les fautes de fin de match.</p>
     </div>
 
     <div class="lesson">
-      <p class="num"><span class="en">Also</span><span class="fr">Aussi</span></p>
-      <h3><span class="en">Separate home court and fatigue</span><span class="fr">Distinguer avantage du terrain et fatigue</span></h3>
-      <p class="en">Measure home-court effects by round, and account for fatigue when estimating blowout risk instead of applying one fixed bonus.</p>
-      <p class="fr">Mesurer l&rsquo;effet du terrain selon la ronde et tenir compte de la fatigue pour estimer les risques de grand écart, plutôt que d&rsquo;appliquer un boni fixe.</p>
+      <p class="num"><span class="en">3</span><span class="fr">3</span></p>
+      <h3><span class="en">Separate home court and fatigue</span><span class="fr">Distinguer l&rsquo;avantage du terrain de la fatigue</span></h3>
+      <p class="en">I&rsquo;ll measure home-court advantage by round and account for fatigue when estimating blowout risk.</p>
+      <p class="fr">Je mesurerai l&rsquo;avantage du terrain selon la ronde et tiendrai compte de la fatigue pour estimer le risque d&rsquo;un grand écart.</p>
     </div>
 
     <div class="lesson">
-      <p class="num"><span class="en">Finally</span><span class="fr">Enfin</span></p>
-      <h3><span class="en">Set update rules in advance</span><span class="fr">Définir les règles d&rsquo;ajustement à l&rsquo;avance</span></h3>
-      <p class="en">Set the rules before the tournament. Test changes on other tournaments, not on the game that prompted them.</p>
-      <p class="fr">Fixer les règles avant le tournoi. Vérifier les changements sur d&rsquo;autres éditions, pas sur le match qui les a motivés.</p>
+      <p class="num"><span class="en">4</span><span class="fr">4</span></p>
+      <h3><span class="en">Set the rules before the tournament</span><span class="fr">Fixer les règles avant le tournoi</span></h3>
+      <p class="en">I&rsquo;ll set update rules before the tournament and test them on other tournaments, not the game that prompted them.</p>
+      <p class="fr">Je fixerai les règles avant le tournoi et testerai les ajustements sur d&rsquo;autres tournois, pas sur le match qui les a inspirés.</p>
     </div>
 
     </div>
@@ -1084,7 +1092,7 @@
 <section id="collab" tabindex="-1">
   <div class="prose">
     <div class="cta">
-      <div class="ctakicker"><span class="en">For Teams, Media &amp; Analysts</span><span class="fr">Pour les équipes, les médias et les analystes</span></div>
+      <div class="ctakicker"><span class="en">For teams, media and analysts</span><span class="fr">Pour les équipes, les médias et les analystes</span></div>
       <h2><span class="en">Let&rsquo;s Talk</span><span class="fr">Parlons-en</span></h2>
       <p class="en">Bilingual forecasts and tournament analysis.</p>
       <p class="fr">Prévisions et analyses de tournois, en français et en anglais.</p>
@@ -1166,8 +1174,8 @@
     fr: "8U.26 · Le modèle face au terrain"
   };
   var descs = {
-    en: "The 2026 Women's Final 8: a correct champion pick, an underestimated finalist and an overcorrected forecast.",
-    fr: "8 Ultime féminin 2026 : la bonne championne, une finaliste sous-estimée et des prévisions surcorrigées."
+    en: "The model picked Saskatchewan to win the 2026 U SPORTS Women's Final 8 but gave UNB just a 10.63% chance of beating Carleton.",
+    fr: "8 Ultime féminin 2026 : le modèle avait choisi la championne, mais n’accordait que 10,63 % de chances à l’UNB de se rendre en demi-finale."
   };
   var numericLabels = [];
   document.querySelectorAll(".hbar-val, td.n").forEach(function (node) {

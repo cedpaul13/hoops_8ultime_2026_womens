@@ -1,21 +1,26 @@
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 
-const source = new URL('../docs/index.html', import.meta.url);
+const files = {
+  '/': ['../docs/index.html', 'text/html; charset=utf-8'],
+  '/index.html': ['../docs/index.html', 'text/html; charset=utf-8'],
+  '/usports-logo.svg': ['../docs/usports-logo.svg', 'image/svg+xml'],
+};
 const server = createServer(async (request, response) => {
   const path = new URL(request.url, 'http://127.0.0.1').pathname;
-  if (path !== '/' && path !== '/index.html') {
+  const file = files[path];
+  if (!file) {
     response.writeHead(404).end('Not found');
     return;
   }
   try {
-    const html = await readFile(source);
+    const content = await readFile(new URL(file[0], import.meta.url));
     response.writeHead(200, {
-      'Content-Type': 'text/html; charset=utf-8',
+      'Content-Type': file[1],
       'Cache-Control': 'no-store',
-    }).end(html);
+    }).end(content);
   } catch (error) {
-    console.error('Cannot read site source:', error);
+    console.error(`Cannot read site file ${path}:`, error);
     response.writeHead(500).end('Site source unavailable');
   }
 });

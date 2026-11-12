@@ -23,6 +23,9 @@ printf '%s\\n' "$*" >> "$DEPLOY_TEST_LOG"
 if [ "$1" = "ls-remote" ] && [ -n "$DEPLOY_TEST_TIP" ]; then
   printf '%s\\trefs/heads/gh-pages\\n' "$DEPLOY_TEST_TIP"
 fi
+if [ "$1" = "add" ]; then
+  test -s index.html && test -s usports-logo.svg || exit 1
+fi
 if [ "$1" = "push" ] && [ "$DEPLOY_TEST_CONFLICT" = "1" ]; then
   exit 1
 fi

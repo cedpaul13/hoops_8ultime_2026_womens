@@ -24,6 +24,7 @@ check_setup.py
 !docs/
 docs/*
 !docs/index.html
+!docs/usports-logo.svg
 node_modules/
 test-results/
 playwright-report/
