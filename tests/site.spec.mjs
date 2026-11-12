@@ -120,7 +120,13 @@ test('layout reflows and chart geometry matches the displayed probabilities', as
   }
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.addStyleTag({ content: 'html { font-size: 200% !important; }' });
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  const resized = await page.evaluate(() => ({
+    overflow: document.documentElement.scrollWidth > innerWidth,
+    offenders: [...document.querySelectorAll('body *')]
+      .filter(node => node.getBoundingClientRect().right > innerWidth)
+      .map(node => ({ tag: node.tagName, class: node.className, text: node.textContent.slice(0, 80) })),
+  }));
+  expect(resized.overflow, JSON.stringify(resized.offenders)).toBe(false);
 });
 
 for (const lang of ['en', 'fr']) {
