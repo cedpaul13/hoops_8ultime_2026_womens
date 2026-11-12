@@ -19,6 +19,11 @@ check_setup.py
 # data
 *.csv
 
-# Site (built locally, deployed via gh-pages, never committed to main)
-docs/
+# Site source and browser test output
 *.html
+!docs/
+docs/*
+!docs/index.html
+node_modules/
+test-results/
+playwright-report/

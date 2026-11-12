@@ -1,0 +1,14 @@
+{
+  "name": "hoops-final8-site",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/deploy.test.mjs && playwright test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.65.0"
+  }
+}

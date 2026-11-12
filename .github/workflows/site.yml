@@ -1,0 +1,78 @@
+name: Site quality
+
+on:
+  push:
+    paths:
+      - 'docs/index.html'
+      - 'tests/**'
+      - 'package*.json'
+      - 'playwright.config.mjs'
+      - 'scripts/deploy_site.sh'
+      - '.github/workflows/site.yml'
+  pull_request:
+    paths:
+      - 'docs/index.html'
+      - 'tests/**'
+      - 'package*.json'
+      - 'playwright.config.mjs'
+      - 'scripts/deploy_site.sh'
+      - '.github/workflows/site.yml'
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: Deploy the tested site to gh-pages
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  browsers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium firefox webkit
+      - run: bash -n scripts/deploy_site.sh
+      - run: npm test
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: site-browser-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+
+  deploy:
+    if: github.event_name == 'workflow_dispatch' && inputs.deploy && github.ref == 'refs/heads/main'
+    needs: browsers
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium firefox webkit
+      - run: gh auth setup-git
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - run: bash scripts/deploy_site.sh
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - run: gh api --method POST "repos/$GH_REPO/pages/builds" --jq .status
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}

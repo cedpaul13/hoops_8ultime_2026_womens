@@ -6,6 +6,10 @@ Eight teams, one national title, four days at the PEPS. I built a model to call 
 
 The site is available in English and French.
 
+The bilingual brief keeps each finding in one place: charts carry the figures, player cards carry individual performances, and prose adds context or limitations rather than repeating results. Backtest, team data and local coverage are expandable. The interface supports saved dark/light preferences, keyboard navigation and reduced motion; charts remain readable without JavaScript.
+
+The self-contained site source is versioned in [`docs/index.html`](./docs/index.html). It needs no framework or build step. Editing or previewing it does not deploy it.
+
 Why it's worth the click:
 
 * A near-exact quarterfinal call — Saskatchewan projected 71–56 over UBC, final score 71–55
@@ -41,6 +45,24 @@ The host **Rouge et Or** entered as the No. 8 seed at 20–7 and immediately kno
 * [Companion project: March Madness 2026](https://cedpaul13.github.io/March_Madness_2026/)
 
 ---
+
+## Site quality checks
+
+With Node.js 22 or newer:
+
+```bash
+npm ci
+npx playwright install chromium firefox webkit
+npm test
+```
+
+The suite checks keyboard navigation, mobile reflow, 200% text resizing, bilingual numbers, saved/blocked preferences, image failures, reduced motion and operation without JavaScript. Axe scans both languages and themes on desktop/mobile in Chromium, Firefox and WebKit. Deployment guards are tested with mocked Git/npm commands; external images are mocked for deterministic browser runs. These tests do not verify remote image availability, scientific model accuracy or production Core Web Vitals.
+
+The [site workflow](./.github/workflows/site.yml) runs these checks on relevant pushes and pull requests. Automated accessibility scans complement, but do not replace, assistive-technology testing.
+
+To publish, run `bash scripts/deploy_site.sh` explicitly. It runs the suite first and replaces `gh-pages` only if its remote tip has not changed since it was read. It never publishes `node_modules`, test reports or model data.
+
+Alternatively, manually run **Site quality** on `main` in GitHub Actions with **Deploy the tested site to gh-pages** enabled. The Linux runner validates all three browsers before deployment, then runs the same guarded script and requests a Pages build. Ordinary pushes only validate the site.
 
 ## Run the pipeline
 
