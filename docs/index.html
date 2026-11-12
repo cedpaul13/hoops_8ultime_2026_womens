@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" data-lang="en" data-theme="dark">
+<html lang="fr" data-lang="fr" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>8U.26 · The model vs. the game</title>
-<meta name="description" id="metaDesc" content="The model picked Saskatchewan to win the 2026 U SPORTS Women's Final 8 but gave UNB just a 10.63% chance of beating Carleton.">
+<title>8U.26 · Le modèle face au terrain</title>
+<meta name="description" id="metaDesc" content="8 Ultime féminin 2026 : le modèle avait choisi la championne, mais n’accordait que 10,63 % de chances à l’UNB de se rendre en demi-finale.">
 <script>
 (function () {
   var root = document.documentElement;
@@ -17,9 +17,9 @@
     console.warn("Local preferences could not be read.", e);
   }
   if (t !== "dark" && t !== "light") {
-    t = "dark";
+    t = "light";
   }
-  if (lang !== "en" && lang !== "fr") lang = "en";
+  if (lang !== "en" && lang !== "fr") lang = "fr";
   root.setAttribute("data-theme", t);
   root.setAttribute("data-lang", lang);
   root.setAttribute("lang", lang);
@@ -605,7 +605,7 @@
 <body>
 
 <a class="skip-link" href="#main"><span class="en">Skip to analysis</span><span class="fr">Aller à l&rsquo;analyse</span></a>
-<nav class="topbar" aria-label="Primary navigation" data-label-en="Primary navigation" data-label-fr="Navigation principale">
+<nav class="topbar" aria-label="Navigation principale" data-label-en="Primary navigation" data-label-fr="Navigation principale">
   <div class="topbar-in">
     <div class="brand-lockup">
       <a class="usports-brand" href="#top" aria-label="U SPORTS">
@@ -621,8 +621,8 @@
       <a href="#eyetest"><span class="en">Players</span><span class="fr">Joueuses</span></a>
       <a href="#collab">Contact <span aria-hidden="true">↗</span></a>
     </div>
-    <button id="langToggle" hidden aria-label="FR — Passer en français">FR</button>
-    <button id="themeToggle" hidden aria-label="Switch to light theme">◐</button>
+    <button id="langToggle" hidden aria-label="EN — Switch to English">EN</button>
+    <button id="themeToggle" hidden aria-label="Activer le thème sombre">◐</button>
     <button id="menuToggle" hidden aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span class="bar"></span></button>
   </div>
 </nav>
@@ -657,8 +657,8 @@
     </div>
     <div class="stats sans">
       <div class="stat"><div class="v"><span class="en">10,000</span><span class="fr">10 000</span></div><div class="l"><span class="en">simulations / matchup</span><span class="fr">simulations / match</span></div></div>
-      <div class="stat"><div class="v"><span class="en">9.0 pts</span><span class="fr">9,0 pts</span></div><div class="l"><span class="en">combined score error · 6-game backtest</span><span class="fr">erreur cumulée · 6 matchs historiques</span></div></div>
-      <div class="stat"><div class="v">0 / 10k</div><div class="l"><span class="en">UNB titles simulated before the tournament</span><span class="fr">titres simulés pour l&rsquo;UNB avant le tournoi</span></div></div>
+      <div class="stat"><div class="v"><span class="en">9.0 pts</span><span class="fr">9,0 pts</span></div><div class="l"><span class="en">average combined score error · 6-game backtest</span><span class="fr">erreur moyenne des deux scores · 6 matchs historiques</span></div></div>
+      <div class="stat"><div class="v"><span class="en">0 / 10k</span><span class="fr">0 / 10 000</span></div><div class="l"><span class="en">UNB titles simulated before the tournament</span><span class="fr">titres simulés pour l&rsquo;UNB avant le tournoi</span></div></div>
       <div class="stat"><div class="v">2 / 2</div><div class="l"><span class="en">semifinal winners correctly picked</span><span class="fr">gagnantes des demies bien prédites</span></div></div>
     </div>
   </div>
@@ -698,7 +698,7 @@
       <summary><span class="en">Inspect the backtest &amp; team data</span><span class="fr">Consulter le test rétroactif et les données des équipes</span></summary>
       <div class="disclosure-content">
     <p class="subhead"><span class="en">Six games. Four editions.</span><span class="fr">Six matchs. Quatre éditions.</span></p>
-    <div class="tablewrap" tabindex="0" role="region" aria-label="Historical backtest" data-label-en="Historical backtest" data-label-fr="Test rétroactif">
+    <div class="tablewrap" tabindex="0" role="region" aria-label="Test rétroactif" data-label-en="Historical backtest" data-label-fr="Test rétroactif">
       <table>
         <thead>
           <tr><th scope="col"><span class="en">Season</span><span class="fr">Saison</span></th><th scope="col"><span class="en">Matchup</span><span class="fr">Match</span></th><th scope="col"><span class="en">Actual</span><span class="fr">Réel</span></th><th scope="col"><span class="en">Projected</span><span class="fr">Projeté</span></th><th scope="col"><span class="en">Error</span><span class="fr">Erreur</span></th></tr>
@@ -714,20 +714,20 @@
       </table>
     </div>
     <p class="subhead"><span class="en">Team stats at a glance</span><span class="fr">Les huit équipes en chiffres</span></p>
-    <div class="tablewrap" tabindex="0" role="region" aria-label="Team data" data-label-en="Team data" data-label-fr="Données des équipes">
+    <div class="tablewrap" tabindex="0" role="region" aria-label="Données des équipes" data-label-en="Team data" data-label-fr="Données des équipes">
       <table>
         <thead>
           <tr><th scope="col"><span class="en">Team</span><span class="fr">Équipe</span></th><th scope="col"><span class="en">Seed</span><span class="fr">Tête de série</span></th><th scope="col">PPG</th><th scope="col"><span class="en">PA</span><span class="fr">PC</span></th><th scope="col"><span class="en">SOS Adj.</span><span class="fr">FC ajustée</span></th><th scope="col"><span class="en">Pressure Idx.</span><span class="fr">Indice pression</span></th></tr>
         </thead>
         <tbody>
-          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#046A38">SAS</span>&nbsp; Saskatchewan</td><td class="n" data-en="Seed" data-fr="Tête de série">5</td><td class="n">82.7</td><td class="n" data-en="PA" data-fr="PC">52.5</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">2.6</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0.5</td></tr>
-          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#C8102E">UNB</span>&nbsp; UNB</td><td class="n" data-en="Seed" data-fr="Tête de série">2</td><td class="n">78.5</td><td class="n" data-en="PA" data-fr="PC">76.1</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">1.4</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0.6</td></tr>
-          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#8A1538">LAV</span>&nbsp; Laval</td><td class="n" data-en="Seed" data-fr="Tête de série">8</td><td class="n">71.1</td><td class="n" data-en="PA" data-fr="PC">51.4</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">1.1</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0.9</td></tr>
-          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#00205B">TMU</span>&nbsp; TMU</td><td class="n" data-en="Seed" data-fr="Tête de série">1</td><td class="n">76.1</td><td class="n" data-en="PA" data-fr="PC">55.8</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">2.2</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0.8</td></tr>
-          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#D71920">CGY</span>&nbsp; Calgary</td><td class="n" data-en="Seed" data-fr="Tête de série">3</td><td class="n">71.9</td><td class="n" data-en="PA" data-fr="PC">55.7</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">2.4</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0.6</td></tr>
-          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#002145">UBC</span>&nbsp; UBC</td><td class="n" data-en="Seed" data-fr="Tête de série">4</td><td class="n">70.0</td><td class="n" data-en="PA" data-fr="PC">55.3</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">2.1</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0.5</td></tr>
-          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#A6192E">CAR</span>&nbsp; Carleton</td><td class="n" data-en="Seed" data-fr="Tête de série">7</td><td class="n">65.0</td><td class="n" data-en="PA" data-fr="PC">57.1</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">1.9</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0.7</td></tr>
-          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#D7192B">MTL</span>&nbsp; McGill</td><td class="n" data-en="Seed" data-fr="Tête de série">6</td><td class="n">61.1</td><td class="n" data-en="PA" data-fr="PC">56.1</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">0.9</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0.4</td></tr>
+          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#046A38">SAS</span>&nbsp; Saskatchewan</td><td class="n" data-en="Seed" data-fr="Tête de série">5</td><td class="n">82,7</td><td class="n" data-en="PA" data-fr="PC">52,5</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">2,6</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0,5</td></tr>
+          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#C8102E">UNB</span>&nbsp; UNB</td><td class="n" data-en="Seed" data-fr="Tête de série">2</td><td class="n">78,5</td><td class="n" data-en="PA" data-fr="PC">76,1</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">1,4</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0,6</td></tr>
+          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#8A1538">LAV</span>&nbsp; Laval</td><td class="n" data-en="Seed" data-fr="Tête de série">8</td><td class="n">71,1</td><td class="n" data-en="PA" data-fr="PC">51,4</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">1,1</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0,9</td></tr>
+          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#00205B">TMU</span>&nbsp; TMU</td><td class="n" data-en="Seed" data-fr="Tête de série">1</td><td class="n">76,1</td><td class="n" data-en="PA" data-fr="PC">55,8</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">2,2</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0,8</td></tr>
+          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#D71920">CGY</span>&nbsp; Calgary</td><td class="n" data-en="Seed" data-fr="Tête de série">3</td><td class="n">71,9</td><td class="n" data-en="PA" data-fr="PC">55,7</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">2,4</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0,6</td></tr>
+          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#002145">UBC</span>&nbsp; UBC</td><td class="n" data-en="Seed" data-fr="Tête de série">4</td><td class="n">70,0</td><td class="n" data-en="PA" data-fr="PC">55,3</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">2,1</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0,5</td></tr>
+          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#A6192E">CAR</span>&nbsp; Carleton</td><td class="n" data-en="Seed" data-fr="Tête de série">7</td><td class="n">65,0</td><td class="n" data-en="PA" data-fr="PC">57,1</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">1,9</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0,7</td></tr>
+          <tr><td data-en="Team" data-fr="Équipe"><span class="teamtag" style="--tc:#D7192B">MTL</span>&nbsp; McGill</td><td class="n" data-en="Seed" data-fr="Tête de série">6</td><td class="n">61,1</td><td class="n" data-en="PA" data-fr="PC">56,1</td><td class="n" data-en="SOS Adj." data-fr="FC ajustée">0,9</td><td class="n" data-en="Pressure Idx." data-fr="Indice pression">0,4</td></tr>
         </tbody>
       </table>
     </div>
@@ -750,12 +750,12 @@
       <div class="ftitle"><span class="en">Pre-tournament medal odds</span><span class="fr">Probabilités de médaille avant le tournoi</span></div>
       <div class="fsub"><span class="en">Monte Carlo simulation, N = 10,000</span><span class="fr">Simulation Monte-Carlo, N = 10 000</span></div>
       <div class="hbar-group sans"><span class="en">Gold medal probability</span><span class="fr">Probabilité de médaille d&rsquo;or</span></div>
-      <div class="hbar-row"><div class="hbar-label sans">Saskatchewan (5)</div><div class="hbar-track viz" style="--w:75.7%"><div class="hbar-fill" style="--barc:var(--s3)"></div></div><div class="hbar-val sans">75.7%</div></div>
-      <div class="hbar-row"><div class="hbar-label sans">TMU (1)</div><div class="hbar-track viz" style="--w:14.0%"><div class="hbar-fill"></div></div><div class="hbar-val sans">14.0%</div></div>
-      <div class="hbar-row"><div class="hbar-label sans">Calgary (3)</div><div class="hbar-track viz" style="--w:9.7%"><div class="hbar-fill"></div></div><div class="hbar-val sans">9.7%</div></div>
-      <div class="hbar-row"><div class="hbar-label sans">Laval (8)</div><div class="hbar-track viz" style="--w:0.3%"><div class="hbar-fill"></div></div><div class="hbar-val sans">0.3%</div></div>
-      <div class="hbar-row"><div class="hbar-label sans">UBC (4)</div><div class="hbar-track viz" style="--w:0.3%"><div class="hbar-fill"></div></div><div class="hbar-val sans">0.3%</div></div>
-      <div class="hbar-row"><div class="hbar-label sans">Carleton (7)</div><div class="hbar-track viz" style="--w:0.1%"><div class="hbar-fill" style="--barc:var(--miss)"></div></div><div class="hbar-val sans">0.1%</div></div>
+      <div class="hbar-row"><div class="hbar-label sans">Saskatchewan (5)</div><div class="hbar-track viz" style="--w:75.7%"><div class="hbar-fill" style="--barc:var(--s3)"></div></div><div class="hbar-val sans">75,7&nbsp;%</div></div>
+      <div class="hbar-row"><div class="hbar-label sans">TMU (1)</div><div class="hbar-track viz" style="--w:14.0%"><div class="hbar-fill"></div></div><div class="hbar-val sans">14,0&nbsp;%</div></div>
+      <div class="hbar-row"><div class="hbar-label sans">Calgary (3)</div><div class="hbar-track viz" style="--w:9.7%"><div class="hbar-fill"></div></div><div class="hbar-val sans">9,7&nbsp;%</div></div>
+      <div class="hbar-row"><div class="hbar-label sans">Laval (8)</div><div class="hbar-track viz" style="--w:0.3%"><div class="hbar-fill"></div></div><div class="hbar-val sans">0,3&nbsp;%</div></div>
+      <div class="hbar-row"><div class="hbar-label sans">UBC (4)</div><div class="hbar-track viz" style="--w:0.3%"><div class="hbar-fill"></div></div><div class="hbar-val sans">0,3&nbsp;%</div></div>
+      <div class="hbar-row"><div class="hbar-label sans">Carleton (7)</div><div class="hbar-track viz" style="--w:0.1%"><div class="hbar-fill" style="--barc:var(--miss)"></div></div><div class="hbar-val sans">0,1&nbsp;%</div></div>
       <div class="hbar-row"><div class="hbar-label sans">McGill (6)</div><div class="hbar-track viz" style="--w:0%"><div class="hbar-fill" style="--barc:var(--miss)"></div></div><div class="hbar-val sans"><span class="en">0.0%</span><span class="fr">0,0&nbsp;%</span></div></div>
       <div class="hbar-row"><div class="hbar-label sans"><b>UNB (2)</b></div><div class="hbar-track viz" style="--w:0%"><div class="hbar-fill" style="--barc:var(--miss)"></div></div><div class="hbar-val sans"><span class="en">0 / 10,000</span><span class="fr">0 / 10 000</span></div></div>
       <figcaption><span class="en">Zero titles in 10,000 simulations doesn&rsquo;t mean a team had no chance.</span><span class="fr">Aucun titre en 10&nbsp;000 simulations ne veut pas dire qu&rsquo;une équipe n&rsquo;avait aucune chance.</span></figcaption>
@@ -878,11 +878,11 @@
       <div class="ftitle"><span class="en">Medal odds, before vs. after one quarterfinal</span><span class="fr">Cotes de médailles, avant et après un seul quart de finale</span></div>
       <div class="fsub"><span class="en">Gold probability · Saskatchewan and UNB</span><span class="fr">Probabilité d&rsquo;or · Saskatchewan et UNB</span></div>
       <div class="hbar-group sans"><span class="en">Pre-tournament</span><span class="fr">Avant le tournoi</span></div>
-      <div class="hbar-row"><div class="hbar-label sans">Saskatchewan</div><div class="hbar-track viz" style="--w:75.7%"><div class="hbar-fill" style="--barc:var(--s3)"></div></div><div class="hbar-val sans">75.7%</div></div>
+      <div class="hbar-row"><div class="hbar-label sans">Saskatchewan</div><div class="hbar-track viz" style="--w:75.7%"><div class="hbar-fill" style="--barc:var(--s3)"></div></div><div class="hbar-val sans">75,7&nbsp;%</div></div>
       <div class="hbar-row"><div class="hbar-label sans">UNB</div><div class="hbar-track viz" style="--w:0%"><div class="hbar-fill" style="--barc:var(--miss)"></div></div><div class="hbar-val sans"><span class="en">0 / 10,000</span><span class="fr">0 / 10 000</span></div></div>
       <div class="hbar-group sans"><span class="en">Post-quarterfinal</span><span class="fr">Après les quarts</span></div>
-      <div class="hbar-row"><div class="hbar-label sans">UNB</div><div class="hbar-track viz" style="--w:43.5%"><div class="hbar-fill"></div></div><div class="hbar-val sans">43.5%</div></div>
-      <div class="hbar-row"><div class="hbar-label sans">Saskatchewan</div><div class="hbar-track viz" style="--w:30.9%"><div class="hbar-fill" style="--barc:var(--s3)"></div></div><div class="hbar-val sans">30.9%</div></div>
+      <div class="hbar-row"><div class="hbar-label sans">UNB</div><div class="hbar-track viz" style="--w:43.5%"><div class="hbar-fill"></div></div><div class="hbar-val sans">43,5&nbsp;%</div></div>
+      <div class="hbar-row"><div class="hbar-label sans">Saskatchewan</div><div class="hbar-track viz" style="--w:30.9%"><div class="hbar-fill" style="--barc:var(--s3)"></div></div><div class="hbar-val sans">30,9&nbsp;%</div></div>
       <figcaption><span class="en">The field shrank from eight teams to four, so this isn&rsquo;t a controlled comparison.</span><span class="fr">Le plateau est passé de huit équipes à quatre; la comparaison n&rsquo;est donc pas contrôlée.</span></figcaption>
     </figure>
   </div>
@@ -891,7 +891,7 @@
     <figure class="photo">
       <div class="photo-media">
         <p class="image-status" role="status" hidden><span class="en">Photo unavailable.</span><span class="fr">Photo indisponible.</span></p>
-        <img src="https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/saskatchewan.sidearmsports.com/images/2026/4/22/Huskie_WBB_at_Legislative_Assembly_DSC_4838.jpg" alt="Saskatchewan Huskies celebrate the 2026 national championship" data-alt-en="Saskatchewan Huskies celebrate the 2026 national championship" data-alt-fr="Les Huskies de la Saskatchewan célèbrent le championnat national 2026" width="1600" height="900" loading="lazy">
+        <img src="https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/saskatchewan.sidearmsports.com/images/2026/4/22/Huskie_WBB_at_Legislative_Assembly_DSC_4838.jpg" alt="Les Huskies de la Saskatchewan célèbrent le championnat national 2026" data-alt-en="Saskatchewan Huskies celebrate the 2026 national championship" data-alt-fr="Les Huskies de la Saskatchewan célèbrent le championnat national 2026" width="1600" height="900" loading="lazy">
       </div>
       <figcaption><span class="en">Saskatchewan, 2026 national champion.</span><span class="fr">La Saskatchewan, championne nationale 2026.</span></figcaption>
     </figure>
@@ -1179,7 +1179,7 @@
   };
   var numericLabels = [];
   document.querySelectorAll(".hbar-val, td.n").forEach(function (node) {
-    var match = /^(\d+)\.(\d+)(%)?$/.exec(node.textContent.trim());
+    var match = /^(\d+)[.,](\d+)\s*(%)?$/.exec(node.textContent.trim());
     if (match) {
       numericLabels.push({
         node: node,

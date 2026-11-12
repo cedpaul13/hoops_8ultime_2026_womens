@@ -24,9 +24,30 @@ test('header logo loads with the tournament name in both languages', async ({ pa
   await page.goto('/');
   await expect(page.locator('.usports-logo')).toBeVisible();
   expect(await page.locator('.usports-logo').evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
-  await expect(page.locator('.topbar-event .en')).toBeVisible();
-  await page.locator('#langToggle').click();
   await expect(page.locator('.topbar-event .fr')).toBeVisible();
+  await page.locator('#langToggle').click();
+  await expect(page.locator('.topbar-event .en')).toBeVisible();
+});
+
+test('defaults to French and light even when the system prefers dark', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await page.goto('/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+  await expect(page).toHaveTitle(/terrain/);
+  await expect(page.locator('#picks .hbar-val').first()).toHaveText(/75,7\s%/);
+  await expect(page.locator('.hero .stat .v .fr', { hasText: '0 / 10 000' })).toBeVisible();
+  await expect(page.locator('.hero .stat .l .fr', { hasText: 'erreur moyenne des deux scores' })).toBeVisible();
+});
+
+test('invalid saved preferences fall back to French and light', async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem('f8-26-lang', 'invalid');
+    localStorage.setItem('f8-26-theme', 'invalid');
+  });
+  await page.goto('/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
 });
 
 test('mobile menu supports keyboard entry, exit and short viewports', async ({ page }) => {
@@ -62,15 +83,16 @@ test('language and theme survive reload; numeric formatting follows the language
   await page.locator('#langToggle').click();
   await page.locator('#themeToggle').click();
   await page.reload();
-  await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
-  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
-  await expect(page).toHaveTitle(/terrain/);
-  await expect(page.locator('#picks .hbar-val').first()).toHaveText(/75,7\s%/);
-  await page.locator('#whiteboard summary').click();
-  await expect(page.locator('#whiteboard tbody tr').nth(6).locator('td').nth(2)).toHaveText('82,7');
-  await page.locator('#langToggle').click();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expect(page).toHaveTitle(/model/);
   await expect(page.locator('#picks .hbar-val').first()).toHaveText('75.7%');
+  await expect(page.locator('.hero .stat .v .en', { hasText: '0 / 10k' })).toBeVisible();
+  await page.locator('#whiteboard summary').click();
   await expect(page.locator('#whiteboard tbody tr').nth(6).locator('td').nth(2)).toHaveText('82.7');
+  await page.locator('#langToggle').click();
+  await expect(page.locator('#picks .hbar-val').first()).toHaveText(/75,7\s%/);
+  await expect(page.locator('#whiteboard tbody tr').nth(6).locator('td').nth(2)).toHaveText('82,7');
 });
 
 test('denied preference storage does not break navigation', async ({ page }) => {
@@ -84,10 +106,12 @@ test('denied preference storage does not break navigation', async ({ page }) => 
     });
   });
   await page.goto('/');
-  await page.locator('#langToggle').click();
-  await page.locator('#themeToggle').click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+  await page.locator('#langToggle').click();
+  await page.locator('#themeToggle').click();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   expect(warnings.some(text => /preferences/i.test(text))).toBe(true);
 });
 
@@ -161,6 +185,11 @@ for (const lang of ['en', 'fr']) {
 test('skip link and data tables remain keyboard accessible', async ({ page, browserName }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+  await expect(page.locator('.topbar-event .fr')).toBeVisible();
+  await expect(page.locator('.tablewrap').first()).toHaveAttribute('aria-label', 'Test rétroactif');
+  await expect(page.locator('.photo img')).toHaveAttribute('alt', /Les Huskies/);
   // Safari uses Option+Tab for links when macOS Full Keyboard Access is off.
   await page.keyboard.press(browserName === 'webkit' && process.platform === 'darwin' ? 'Alt+Tab' : 'Tab');
   await expect(page.locator('.skip-link')).toBeFocused();
@@ -189,8 +218,15 @@ test.describe('without JavaScript', () => {
     await page.goto('/');
     await expect(page.locator('#navLinks a:visible')).toHaveCount(5);
     await expect(page.locator('.topbar button:visible')).toHaveCount(0);
+    await expect(page.locator('html')).toHaveAttribute('lang', 'fr');
+    await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+    await expect(page.locator('.topbar-event .fr')).toBeVisible();
+    await expect(page.locator('.tablewrap').first()).toHaveAttribute('aria-label', 'Test rétroactif');
+    await expect(page.locator('.photo img')).toHaveAttribute('alt', /Les Huskies/);
+    await expect(page.locator('#picks .hbar-val').first()).toHaveText(/75,7\s%/);
     await page.locator('#whiteboard summary').click();
     await expect(page.locator('#whiteboard table').first()).toBeVisible();
+    await expect(page.locator('#whiteboard tbody tr').nth(6).locator('td').nth(2)).toHaveText('82,7');
     expect(await page.locator('.hbar-fill').first().evaluate(node => node.clientWidth)).toBeGreaterThan(0);
   });
 });
